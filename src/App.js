@@ -1,7 +1,8 @@
 import './App.css';
 import Landing from './pages/Landing';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Landing />
