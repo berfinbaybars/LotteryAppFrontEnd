@@ -21,7 +21,7 @@ const CollectTicketPrize = ({ contract, setError, address, getBalance }) => {
 
     return (
         <Form>
-            <h3>Get Ticket Prize</h3>
+            <h3>Collect Ticket Prize</h3>
             <Row>
                 <Row>
                     <Col xs={4}>

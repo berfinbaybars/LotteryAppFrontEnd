@@ -7,7 +7,8 @@ const RevealRandomNumber = ({ contract, setError, address }) => {
     const revealRandomNumber = async () => {
         let ticketNo = input.ticketNo;
         let randomNumber = input.randomNumber;
-        if(!ticketNo || !randomNumber){
+        console.log(randomNumber, ticketNo);
+        if(ticketNo === "" || randomNumber === ""){
             setError("Please fill the Random Number and Ticket No fields.")
             return;
         }
@@ -28,7 +29,7 @@ const RevealRandomNumber = ({ contract, setError, address }) => {
                         <Form.Label>Random Number</Form.Label>
                     </Col>
                     <Col xs={4}>
-                        <Form.Label>Ticket ID</Form.Label>
+                        <Form.Label>Ticket No</Form.Label>
                     </Col>
                 </Row>
                 <Row>
@@ -36,7 +37,7 @@ const RevealRandomNumber = ({ contract, setError, address }) => {
                         <Form.Control type="number" placeholder="123" onChange={(e) => setInput({...input, randomNumber: e.target.value})}/>
                     </Col>
                     <Col>
-                        <Form.Control type="number" placeholder="42" onChange={(e) => setInput({...input, randomTicketID: e.target.value})}/>
+                        <Form.Control type="number" placeholder="42" onChange={(e) => setInput({...input, ticketNo: e.target.value})}/>
                     </Col>
                     <Col>
                         <Button variant={'secondary'} size="xs" onClick={() => revealRandomNumber()} >Reveal</Button>

@@ -13,7 +13,8 @@ const CheckIfTicketWon = ({ contract, setError, address }) => {
             return;
         }
         try {
-            const _prize = await contract.methods.checkIfTicketWon(ticketNo, _lotteryNo).call({from: address});
+            const _prize = await contract.methods.checkIfTicketWon(ticketNo, _lotteryNo).send({from: address});
+            console.log(_prize)
             setPrize(_prize);
         } catch (err) {
             setError(err.message);
