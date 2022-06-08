@@ -14,7 +14,7 @@ const GetIthWinningTicket = ({ contract, setError, address }) => {
             return;
         }
         try {
-            const ticket = await contract.methods.collectTicketPrize(i, _lotteryNo).call({from: address});
+            const ticket = await contract.methods.getIthWinningTicket(i, _lotteryNo).call({from: address});
             setTicketNo(ticket[0]);
             setPrize(ticket[1]); 
         } catch (err) {
